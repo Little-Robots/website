@@ -104,7 +104,7 @@
                   <div>
                     <badge type="primary" rounded>nivel: inicial</badge>
                     <badge type="primary" rounded>arduino</badge>
-                    <badge type="primary" rounded>c++</badge>
+                    <badge type="primary" rounded>c</badge>
                   </div>
                   <base-button tag="a" href="#curso-inicial" type="primary" class="mt-4">Ver más</base-button>
                 </card>
@@ -122,7 +122,7 @@
                   <div>
                     <badge type="success" rounded>nivel: intermedio</badge>
                     <badge type="success" rounded>arduino</badge>
-                    <!-- <badge type="success" rounded>success</badge> -->
+                    <badge type="primary" rounded>c++</badge>
                   </div>
                   <base-button disabled type="success" class="mt-4">Próximamente</base-button>
                 </card>
@@ -140,6 +140,7 @@
                   <div>
                     <badge type="warning" rounded>nivel: avanzado</badge>
                     <badge type="warning" rounded>Raspberry Pi</badge>
+                    <badge type="success" rounded>javascript</badge>
                   </div>
                   <base-button disabled type="warning" class="mt-4">Próximamente</base-button>
                 </card>
@@ -175,7 +176,7 @@
                 <h4 class="display-3 text-white">Nuestra propuesta</h4>
                 <p
                   class="text-white"
-                >Creemos que la mejor forma de aprender es haciendo. Por eso ofrecemos una propuesta integral que combina el trabajo en clase con asistencia continua durante la cursada.</p>
+                >Creemos que la mejor forma de aprender es haciendo. Por eso te ofrecemos una propuesta integral que combina el trabajo en clase con asistencia continua durante la cursada.</p>
               </div>
             </div>
             <card shadow class="shadow-lg--hover mt-5">
@@ -333,7 +334,7 @@
         <div class="row justify-content-center mt--300">
           <div class="col-lg-8">
             <card gradient="secondary" shadow body-classes="p-lg-5">
-              <h4 class="mb-1">Dejanos tus datos de contacto</h4>
+              <h4 class="mb-1">Dejanos tus datos</h4>
               <!-- <p class="mt-0">Dejanos tus datos</p> -->
               <base-input
                 class="mt-5"
