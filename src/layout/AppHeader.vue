@@ -7,7 +7,7 @@
 
             <div class="row" slot="content-header" slot-scope="{closeMenu}">
                 <div class="col-6 collapse-brand">
-                    <a href="https://demos.creative-tim.com/vue-argon-design-system/documentation/">
+                    <a href="/">
                         <img src="img/brand/blue_logo.png">
                     </a>
                 </div>
@@ -67,7 +67,7 @@
                     </a>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial"
+                    <a class="nav-link nav-link-icon" href="https://www.instagram.com/roboticalittlerobots/"
                        target="_blank" rel="noopener" data-toggle="tooltip" title="Follow us on Instagram">
                         <i class="fa fa-instagram"></i>
                         <span class="nav-link-inner--text d-lg-none">Instagram</span>
