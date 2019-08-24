@@ -355,10 +355,12 @@ export default {
   },
   methods: {
     sendContactForm: async function () {
+      console.log(process.env.VUE_APP_SLACK_TOKEN)
+      console.log(process.env.VUE_APP_SLACK_CHANNEL)
       if (this.name.length > 0 && this.email.length > 0 && this.email.includes('@') && this.email.includes('.') && this.message.length > 0) {
         let text = `********* Nuevo contacto *********\nNombre: ${this.name}\nEmail: ${this.email}\nTeléfono: ${this.phone}\nMensaje: ${this.message}`
-        const web = new WebClient('xoxp-739071943959-737212736309-739074340455-8cbad91831c1b8fa1e1d472ed5658d4f')
-        const res = await web.chat.postMessage({ channel: 'GMGQD8WJV', text: text })
+        const web = new WebClient(process.env.VUE_APP_SLACK_TOKEN)
+        const res = await web.chat.postMessage({ channel: process.env.VUE_APP_SLACK_CHANNEL, text: text })
         console.log(res.ts)
       } else {
           alert ('Por favor completá tu nombre, email y tu consulta así podemos contactarte. Gracias!')
