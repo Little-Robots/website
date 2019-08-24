@@ -1,6 +1,40 @@
 <template>
   <!-- eslint-disable -->
   <div>
+
+    <!-- MODAL -->
+    <div class="col-md-4">
+
+      <modal
+        :show.sync="showModal"
+        :gradient="modalType"
+        modal-classes="modal-danger modal-dialog-centered"
+      >
+        <!-- <h6
+          slot="header"
+          class="modal-title"
+          id="modal-title-notification"
+        >Your attention is required</h6> -->
+
+        <div class="py-3 text-center">
+          <i class="ni ni-bell-55 ni-3x"></i>
+          <h4 class="heading mt-4">{{ modalTitle }}</h4>
+          <p>
+              {{ modalBody }}
+          </p>
+        </div>
+
+        <template slot="footer">
+          <!-- <base-button type="white">Ok, Got it</base-button> -->
+          <base-button
+            type="link"
+            text-color="white"
+            class="ml-auto"
+            @click="showModal = false"
+          >Cerrar</base-button>
+        </template>
+      </modal>
+    </div>
     <div class="position-relative">
       <!-- shape Hero -->
       <section class="section-shaped my-0">
@@ -341,29 +375,43 @@
 
 <script>
 const { WebClient } = require('@slack/web-api')
+import Modal from "@/components/Modal.vue"
 
 export default {
   name: "home",
-  components: {},
+  components: { Modal },
   data: () => {
     return {
       name: '',
       email: '',
       phone: '',
-      message: ''
+      message: '',
+      showModal: false,
+      modalTitle: '',
+      modalBody: '',
+      modalType: 'danger'
     }
   },
   methods: {
     sendContactForm: async function () {
-      console.log(process.env.VUE_APP_SLACK_TOKEN)
-      console.log(process.env.VUE_APP_SLACK_CHANNEL)
       if (this.name.length > 0 && this.email.length > 0 && this.email.includes('@') && this.email.includes('.') && this.message.length > 0) {
         let text = `********* Nuevo contacto *********\nNombre: ${this.name}\nEmail: ${this.email}\nTeléfono: ${this.phone}\nMensaje: ${this.message}`
         const web = new WebClient(process.env.VUE_APP_SLACK_TOKEN)
         const res = await web.chat.postMessage({ channel: process.env.VUE_APP_SLACK_CHANNEL, text: text })
-        console.log(res.ts)
+        console.log(res)
+        this.modalType = 'primary'
+        this.modalTitle = 'Gracias por dejarnos un mensaje'
+        this.modalBody = 'Te contactaremos a la brevedad.'
+        this.showModal = true
+        this.name = ''
+        this.phone = ''
+        this.message = ''
+        this.email = ''
       } else {
-          alert ('Por favor completá tu nombre, email y tu consulta así podemos contactarte. Gracias!')
+        this.modalType = 'danger'
+        this.modalTitle = 'Error'
+        this.modalBody = 'Por favor completá tu nombre, email y tu consulta así podemos contactarte. Gracias!'
+        this.showModal = true
       }
     }
   }
