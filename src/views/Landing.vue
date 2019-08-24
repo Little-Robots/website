@@ -1,10 +1,8 @@
 <template>
   <!-- eslint-disable -->
   <div>
-
     <!-- MODAL -->
     <div class="col-md-4">
-
       <modal
         :show.sync="showModal"
         :gradient="modalType"
@@ -14,14 +12,12 @@
           slot="header"
           class="modal-title"
           id="modal-title-notification"
-        >Your attention is required</h6> -->
+        >Your attention is required</h6>-->
 
         <div class="py-3 text-center">
           <i class="ni ni-bell-55 ni-3x"></i>
           <h4 class="heading mt-4">{{ modalTitle }}</h4>
-          <p>
-              {{ modalBody }}
-          </p>
+          <p>{{ modalBody }}</p>
         </div>
 
         <template slot="footer">
@@ -35,6 +31,7 @@
         </template>
       </modal>
     </div>
+
     <div class="position-relative">
       <!-- shape Hero -->
       <section class="section-shaped my-0">
@@ -106,7 +103,13 @@
                     <badge type="primary" rounded>arduino</badge>
                     <badge type="primary" rounded>c</badge>
                   </div>
-                  <base-button tag="a" href="#curso-inicial" type="primary" class="mt-4">Ver más</base-button>
+                  <base-button
+                    @click="showCourse1 = true"
+                    tag="a"
+                    href="/course-01"
+                    type="primary"
+                    class="mt-4"
+                  >Ver más</base-button>
                 </card>
               </div>
               <div class="col-lg-4">
@@ -122,7 +125,7 @@
                   <div>
                     <badge type="success" rounded>nivel: intermedio</badge>
                     <badge type="success" rounded>arduino</badge>
-                    <badge type="primary" rounded>c++</badge>
+                    <badge type="success" rounded>c++</badge>
                   </div>
                   <base-button disabled type="success" class="mt-4">Próximamente</base-button>
                 </card>
@@ -140,7 +143,7 @@
                   <div>
                     <badge type="warning" rounded>nivel: avanzado</badge>
                     <badge type="warning" rounded>Raspberry Pi</badge>
-                    <badge type="success" rounded>javascript</badge>
+                    <badge type="warning" rounded>js</badge>
                   </div>
                   <base-button disabled type="warning" class="mt-4">Próximamente</base-button>
                 </card>
@@ -298,7 +301,7 @@
         <span></span>
         <span></span>
       </div>
-      <div class="container pt-lg pb-300">
+      <div id="contactanos" class="container pt-lg pb-300">
         <div class="row text-center justify-content-center">
           <div class="col-lg-10">
             <h2 class="display-3 text-white">Contactanos</h2>
@@ -388,6 +391,7 @@ export default {
       phone: '',
       message: '',
       showModal: false,
+      showCourse1: false,
       modalTitle: '',
       modalBody: '',
       modalType: 'danger'

@@ -2,41 +2,32 @@ import Vue from "vue";
 import Router from "vue-router";
 import AppHeader from "./layout/AppHeader";
 import AppFooter from "./layout/AppFooter";
-import Components from "./views/Components.vue";
 import Landing from "./views/Landing.vue";
-import Login from "./views/Login.vue";
+import Components from "./views/Components.vue";
 import Register from "./views/Register.vue";
-import Profile from "./views/Profile.vue";
+import Course01 from "./views/Course01.vue";
 
 Vue.use(Router);
 
 export default new Router({
   linkExactActiveClass: "active",
+  mode: 'history',
   routes: [
-    // {
-    //   path: "/",
-    //   name: "components",
-    //   components: {
-    //     header: AppHeader,
-    //     default: Components,
-    //     footer: AppFooter
-    //   }
-    // },
+    {
+      path: "/comps",
+      name: "components",
+      components: {
+        header: AppHeader,
+        default: Components,
+        footer: AppFooter
+      }
+    },
     {
       path: "/",
       name: "landing",
       components: {
         header: AppHeader,
         default: Landing,
-        footer: AppFooter
-      }
-    },
-    {
-      path: "/login",
-      name: "login",
-      components: {
-        header: AppHeader,
-        default: Login,
         footer: AppFooter
       }
     },
@@ -50,11 +41,11 @@ export default new Router({
       }
     },
     {
-      path: "/profile",
-      name: "profile",
+      path: "/course-01",
+      name: "course01",
       components: {
         header: AppHeader,
-        default: Profile,
+        default: Course01,
         footer: AppFooter
       }
     }
