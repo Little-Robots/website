@@ -13,7 +13,7 @@
               <strong>Lugar</strong> Beccar, San Isidro
             </div>
             <div class="description">
-              <strong>Horario</strong> Jueves 17 a 20 Hrs (10 clases)
+              <strong>Horario</strong> Jueves de 17 a 20 Hrs (10 clases)
             </div>
             <div class="description">
               <strong>Fecha de inicio</strong> 26 de Septiembre 2019
@@ -33,7 +33,7 @@
             <div class="description">
               <strong>Requisitos</strong>
               <br />No se requiere experiencia previa de ningún tipo, te vamos a enseñar todo lo necesario.
-              <br />Lo único que necesitas es una notebook/laptop para poder trabajar comodamente (en caso de no contar con una consultar por privado).
+              <br />Lo único que necesitas es una notebook/laptop para poder trabajar cómodamente (en caso de no contar con una consultar por privado).
             </div>
             <div class="description" style="padding-top: 10px;">
               <strong>Materiales</strong>
@@ -53,8 +53,8 @@
             <p class="description">
               El curso tiene los siguientes objetivos:
               <br />+ Introducción al lenguaje Arduino y a los componentes electrónicos.
-              <br />+ Armado de circuitos básicos, conocimiento de sensores y comunicación con sistemas informaticos.
-              <br />+ Enfoque en profundidad en diversas aplicaciones comunes en el area de la robótica experimental.
+              <br />+ Armado de circuitos básicos, conocimiento de sensores y comunicación con sistemas informáticos.
+              <br />+ Enfoque en profundidad en diversas aplicaciones comunes en el área de la robótica experimental.
               <br />+ Desarrollar un proyecto que integre los conocimientos adquiridos en el curso.
             </p>
           </tab-pane>

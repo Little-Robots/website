@@ -200,7 +200,7 @@
                 </div>
                 <div class="pl-4">
                   <h5 class="title text-warning">Consultas online</h5>
-                  <p>Los alumnos tienen acceso a un canal de comunicación privado donde los acompañamos con cualquier consulta o inquietud que tengan fuera de clases.</p>
+                  <p>Los alumnos tienen acceso a un canal de comunicación privado donde los acompañamos con cualquier consulta o inquietud que tengan fuera de clase.</p>
                 </div>
               </div>
             </card>
