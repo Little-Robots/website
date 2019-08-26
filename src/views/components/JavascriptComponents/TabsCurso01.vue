@@ -34,6 +34,7 @@
               <strong>Requisitos</strong>
               <br />No se requiere experiencia previa de ningún tipo, te vamos a enseñar todo lo necesario.
               <br />Lo único que necesitas es una notebook/laptop para poder trabajar cómodamente (en caso de no contar con una consultar por privado).
+              <br />Edad recomendada: 16 años o más
             </div>
             <div class="description" style="padding-top: 10px;">
               <strong>Materiales</strong>

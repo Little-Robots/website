@@ -229,7 +229,7 @@
               <div class="pt-4 text-center">
                 <h5 class="title">
                   <span class="d-block mb-1">Juan</span>
-                  <small class="h6 text-muted">Ing. Informático</small>
+                  <small class="h6 text-muted">Ing. Informático (UBA)</small>
                 </h5>
               </div>
             </div>
@@ -244,7 +244,7 @@
               <div class="pt-4 text-center">
                 <h5 class="title">
                   <span class="d-block mb-1">Tomi</span>
-                  <small class="h6 text-muted">Ing. Electrónico</small>
+                  <small class="h6 text-muted">Ing. Electrónico (ITBA)</small>
                 </h5>
               </div>
             </div>
