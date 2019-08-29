@@ -305,9 +305,13 @@
         <div class="row text-center justify-content-center">
           <div class="col-lg-10">
             <h2 class="display-3 text-white">Contactanos</h2>
-            <p
-              class="lead text-white"
-            >Si estás interesado en alguno de los cursos o querés hacernos una consulta, contactanos!</p>
+            <p class="lead text-white">
+              Si estás interesado en alguno de los cursos o querés hacernos una consulta podés contactarnos vía mail a
+              <a
+                href="mailto:roboticalittlerobots@gmail.com"
+              >roboticalittlerobots@gmail.com</a>, por nuestro
+              <a href="https://www.instagram.com/roboticalittlerobots/">instagram</a> o dejanos tus datos:
+            </p>
           </div>
         </div>
         <!-- <div class="row row-grid mt-5">
@@ -337,7 +341,7 @@
         <div class="row justify-content-center mt--300">
           <div class="col-lg-8">
             <card gradient="secondary" shadow body-classes="p-lg-5">
-              <h4 class="mb-1">Dejanos tus datos</h4>
+              <h4 class="mb-1">Tus datos</h4>
               <!-- <p class="mt-0">Dejanos tus datos</p> -->
               <base-input
                 class="mt-5"
@@ -378,8 +382,13 @@
 </template>
 
 <script>
-const { WebClient } = require('@slack/web-api')
+// const { WebClient } = require('@slack/web-api')
 import Modal from "@/components/Modal.vue"
+import axios from 'axios'
+
+axios.defaults.baseURL = 'https://slack.com/api'
+// axios.defaults.headers.common[ 'Authorization' ] = process.env.VUE_APP_SLACK_TOKEN
+axios.defaults.headers.post[ 'Content-Type' ] = 'application/x-www-form-urlencoded'
 
 export default {
   name: "home",
@@ -401,17 +410,30 @@ export default {
     sendContactForm: async function () {
       if (this.name.length > 0 && this.email.length > 0 && this.email.includes('@') && this.email.includes('.') && this.message.length > 0) {
         let text = `********* Nuevo contacto *********\nNombre: ${this.name}\nEmail: ${this.email}\nTeléfono: ${this.phone}\nMensaje: ${this.message}`
-        const web = new WebClient(process.env.VUE_APP_SLACK_TOKEN)
-        const res = await web.chat.postMessage({ channel: process.env.VUE_APP_SLACK_CHANNEL, text: text })
-        console.log(res)
-        this.modalType = 'primary'
-        this.modalTitle = 'Gracias por dejarnos un mensaje'
-        this.modalBody = 'Te contactaremos a la brevedad.'
-        this.showModal = true
-        this.name = ''
-        this.phone = ''
-        this.message = ''
-        this.email = ''
+        // const web = new WebClient(process.env.VUE_APP_SLACK_TOKEN)
+        // const res = await web.chat.postMessage({ channel: process.env.VUE_APP_SLACK_CHANNEL, text: text })
+        try {
+          const params = new URLSearchParams()
+          params.append('token', process.env.VUE_APP_SLACK_TOKEN)
+          params.append('channel', process.env.VUE_APP_SLACK_CHANNEL)
+          params.append('text', text)
+          let res = await axios.post('/chat.postMessage', params, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+          console.log(res)
+          this.modalType = 'primary'
+          this.modalTitle = 'Gracias por dejarnos un mensaje'
+          this.modalBody = 'Te contactaremos a la brevedad.'
+          this.showModal = true
+          this.name = ''
+          this.phone = ''
+          this.message = ''
+          this.email = ''
+        } catch (error) {
+          this.modalType = 'danger'
+          this.modalTitle = 'Error'
+          this.modalBody = 'No se pudo enviar el mensaje. Por favor contactanos vía email a roboticalittlerobots@gmail.com. Gracias!'
+          this.showModal = true
+        }
+
       } else {
         this.modalType = 'danger'
         this.modalTitle = 'Error'
